@@ -1,0 +1,46 @@
+# unkn0wn prompt theme
+
+prompt_unkn0wn_help () {
+  cat <<'EOF'
+This prompt is color-scheme-able.  You can invoke it thus:
+
+  prompt unkn0wn [<promptcolor> [<usercolor> [<rootcolor>]]]
+
+EOF
+}
+
+prompt_unkn0wn_setup () {
+  prompt_unkn0wn_prompt=$'\e[1;34m'
+  prompt_unkn0wn_user=$'\e[1;32m'
+  prompt_unkn0wn_root=$'\e[31m'
+  prompt_unkn0wn_reset=$'\e[0m'
+
+  if [ "$USER" = 'root' ]
+  then
+    base_prompt="%{$prompt_unkn0wn_root%}%m%{$prompt_unkn0wn_reset%}"
+  else
+    base_prompt="%{$prompt_unkn0wn_user%}%n@%m%{$prompt_unkn0wn_reset%}"
+  fi
+  post_prompt="%{$prompt_unkn0wn_reset%}"
+
+  local color="%{*}"
+  base_prompt_no_color="${(S)base_prompt//${~color}/}"
+  post_prompt_no_color="${(S)post_prompt//${~color}/}"
+
+  setopt noxtrace localoptions
+  local base_prompt_expanded_no_color base_prompt_etc
+  local prompt_length space_left
+
+  base_prompt_expanded_no_color=$(print -P "$base_prompt_no_color")
+  base_prompt_etc=$(print -P "$base_prompt%(4~|...|)%3~")
+  prompt_length=${#base_prompt_etc}
+  path_prompt="%{$prompt_unkn0wn_prompt%}%1~"
+  PS1="$base_prompt:: $post_prompt"
+  PS2="$base_prompt$path_prompt %_> $post_prompt"
+  PS3="$base_prompt$path_prompt ?# $post_prompt"
+  RPS1="[$path_prompt$post_prompt]"
+  precmd  () { }
+  preexec () { }
+}
+
+prompt_unkn0wn_setup "$@"
