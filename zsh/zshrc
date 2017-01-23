@@ -266,10 +266,6 @@ preexec() {
     esac
 }
 
-bug() {
-    open "https://bugreport.savantav.com/show_bug.cgi?id=$1"
-}
-
 google() {
     open "http://www.google.com/search?q=$@"
 }
