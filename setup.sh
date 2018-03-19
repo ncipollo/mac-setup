@@ -44,6 +44,7 @@ fancyEcho "Installing all the best brews"
 brew install zsh git
 brew install go gradle node
 brew install sqlite3;brew link --force sqlite3
+brew install diff-so-fancy
 #Move ZSH resources into place if they are different
 fancyEcho "Copying zsh resources into place"
 copyIfDifferent zsh/zshrc ~/.zshrc
@@ -60,3 +61,5 @@ launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk
 # Install NPM
 fancyEcho "Installing NPM"
 curl https://npmjs.org/install.sh | sh
+# Setup Git
+sh git-setup.sh
