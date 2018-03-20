@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RF"
+git config --global core.pager "diff-so-fancy | less --tabs=4"
 
 git config --global color.ui true
 
