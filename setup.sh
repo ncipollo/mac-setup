@@ -61,5 +61,9 @@ launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk
 # Install NPM
 fancyEcho "Installing NPM"
 curl https://npmjs.org/install.sh | sh
+# Install and Setup Yarn
+fancyEcho "Installing NPM"
+brew install yarn
+yarn global add yarn-completions
 # Setup Git
 sh git-setup.sh
