@@ -149,7 +149,7 @@ function rprompt {
     if [ -n "$vcs_info_msg_0_" ]; then
         echo "%{$fg_bold[green]%}$vcs_info_msg_0_%{$reset_color%}[%{$fg_bold[blue]%}%c%{$fg_bold[white]%}]"
     else
-        echo "%{$fg_bold[white]%}[%{$fg_bold[blue]%}%c%{$fg_bold[white]%}]%{$reset_color%}"
+        echo "%{$fg_bold[white]%}[%{$fg_bold[blue]%}%1/%{$fg_bold[white]%}]%{$reset_color%}"
     fi
 }
 
