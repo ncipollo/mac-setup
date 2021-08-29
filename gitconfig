@@ -1,0 +1,34 @@
+[core]
+	editor = emacs
+	excludesfile = /Users/ncipollo/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4
+[user]
+	name = Nick Cipollo
+	email = njc1115@gmail.com
+	signingkey = 7D07BF98034864D2
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	gud = "! echo \"\\\\\\\\o/\";git reset --hard"
+	purge = !git branch -D `git branch | grep -i 'bug/\\|dev/\\|sdk\\|story/\\|ticket/'`
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[pager]
+	branch = false
+[commit]
+	gpgsign = true
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true

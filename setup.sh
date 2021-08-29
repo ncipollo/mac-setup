@@ -66,4 +66,5 @@ fancyEcho "Installing NPM"
 brew install yarn
 yarn global add yarn-completions
 # Setup Git
-sh git-setup.sh
+fancyEcho "Setting up Git"
+cp -f gitconfig ~/.gitconfig
