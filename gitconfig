@@ -9,7 +9,7 @@
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	gud = "! echo \"\\\\\\\\o/\";git reset --hard"
-	purge = !git branch -D `git branch | grep -i 'bug/\\|dev/\\|sdk\\|story/\\|ticket/'`
+	purge = !git branch | grep -v '^*' | xargs git branch -d
 [color]
 	ui = true
 [color "diff-highlight"]
