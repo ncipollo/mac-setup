@@ -6,8 +6,8 @@
 	pager = diff-so-fancy | less --tabs=4
 [user]
 	name = Nick Cipollo
-	email = nicholas.cipollo@whoop.com
-	signingkey = 157EFD8CE6AB2612
+	email = njc1115@gmail.com
+	signingkey = <blarg>
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	gud = "! echo \"\\\\\\\\o/\";git reset --hard"
